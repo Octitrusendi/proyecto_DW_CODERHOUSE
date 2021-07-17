@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="assets/style.css">
     <title>Lab. Análisis Clínicos</title>
 </head>
-<body class="grid_contenedor">
+<body class="grid_contenedor" id="body">
     <header class="grid_encabezado">
         <nav class="encabezado__style">
             <div class="encabezado__logo">
@@ -25,7 +25,7 @@
             </div>	
             <div class="caja_menu" >
                 <div class="icono__menuresposive">
-                    <i class="fas fa-align-justify"></i>
+                    <i class="fas fa-align-justify" id="btn_open"></i>
                 </div>
                 <ul class="menu">
                     <li><a href="index.html">Inicio</a></li>
@@ -45,6 +45,68 @@
             </div>
         </nav>
     </header>
+    <div class="menu__side" id="menu_side">
+        <div class="options__menu">	
+            <a href="index.html" class="selected">
+                <div class="option">
+                    <h4>Inicio</h4>
+                </div>
+            </a>
+            <a href="views/quienes_somos.html">
+                <div class="option">
+                    <h4>Nosotros</h4>
+                </div>
+            </a>
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header option " id="flush-headingMenu">
+                        <button class="acorddion collapsed accordion-button_menu" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseMenu" aria-expanded="false" aria-controls="flush-collapseMenu">
+                        Servicios <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </h2>
+                    <div id="flush-collapseMenu" class="accordion-collapse collapse" aria-labelledby="flush-headingMenu" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                        <a href="views/turnos.html">
+                            <div class="option">
+                                <h4>Turnos</h4>
+                            </div>
+                        </a>
+                        <a href="views/resultados_online.html">
+                            <div class="option">
+                                <h4>Resultados Online</h4>
+                            </div>
+                        </a>
+                        <a href="views/extracciones_domicilio.html">
+                            <div class="option">
+                                <h4>Extracciones a domicilio </h4>
+                            </div>
+                        </a>
+                        <a href="views/autorizaciones_online.html">
+                            <div class="option">
+                                <h4>Autorizaciones Online</h4>
+                            </div>
+                        </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="views/obras_sociales.html">
+                <div class="option">
+                    <h4>Obras Sociales</h4>
+                </div>
+            </a>
+            <a href="views/indicaciones_previas.html">
+                <div class="option">
+                    <h4>Indicaciones Previas </h4>
+                </div>
+            </a>
+            <a href="views/contacto.html">
+                <div class="option">
+                    <h4>Contacto</h4>
+                </div>
+            </a>
+        </div>
+    </div>
     <!-- Imagen -->
     <div id="imagen" class="grid_imagen" > </div>
     <!-- Seccion 1 -->
@@ -211,6 +273,7 @@
             </a>
         </div>
     </footer>
+    <script src="js/scrip.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>

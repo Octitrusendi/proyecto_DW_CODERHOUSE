@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="../assets/style.css">
 		<title>Indicaciones Previas</title>
 	</head>
-	<body class="grid_contenedor">
+	<body class="grid_contenedor" id="body">
 		<header class="grid_encabezado">
 			<nav class="encabezado__style">
 				<div class="encabezado__logo">
@@ -23,12 +23,12 @@
 				</div>	
 				<div class="caja_menu" >
 					<div class="icono__menuresposive">
-						<i class="fas fa-align-justify"></i>
+						<i class="fas fa-align-justify" id="btn_open"></i>
 					</div>
 					<ul class="menu">
 						<li><a href="../index.html">Inicio</a></li>
 						<li><a href="../views/quienes_somos.html">Nosotros</a></li>
-						<li><a href="#">Servicios</a>	
+						<li><a href="#">Servicios<i class="fas fa-chevron-down"></i></a>	
 							<ul class="submenu">
 								<li><a href="../views/turnos.html">Turnos</a></li>
 								<li><a href="../views/resultados_online.html">Resultados Online</a></li>
@@ -43,6 +43,69 @@
 				</div>
 			</nav>
 		</header>
+		<div class="menu__side" id="menu_side">
+			<div class="options__menu">	
+				<a href="../index.html" class="selected">
+					<div class="option">
+						<h4>Inicio</h4>
+					</div>
+				</a>
+				<a href="../views/quienes_somos.html">
+					<div class="option">
+						<h4>Nosotros</h4>
+					</div>
+				</a>
+				<div class="accordion accordion-flush" id="accordionFlushExample">
+					<div class="accordion-item">
+						<h2 class="accordion-header option " id="flush-headingMenu">
+							<button class="acorddion collapsed accordion-button_menu" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseMenu" aria-expanded="false" aria-controls="flush-collapseMenu">
+							Servicios <i class="fas fa-chevron-down"></i>
+							</button>
+						</h2>
+						<div id="flush-collapseMenu" class="accordion-collapse collapse" aria-labelledby="flush-headingMenu" data-bs-parent="#accordionFlushExample">
+							<div class="accordion-body">
+							<a href="../views/turnos.html">
+								<div class="option">
+									<h4>Turnos</h4>
+								</div>
+							</a>
+							<a href="../views/resultados_online.html">
+								<div class="option">
+									<h4>Resultados Online</h4>
+								</div>
+							</a>
+							<a href="../views/extracciones_domicilio.html">
+								<div class="option">
+									<h4>Extracciones a domicilio </h4>
+								</div>
+							</a>
+							<a href="../views/autorizaciones_online.html">
+								<div class="option">
+									<h4>Autorizaciones Online</h4>
+								</div>
+							</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<a href="../views/obras_sociales.html">
+					<div class="option">
+						<h4>Obras Sociales</h4>
+					</div>
+				</a>
+				<a href="../views/indicaciones_previas.html">
+					<div class="option">
+						<h4>Indicaciones Previas </h4>
+					</div>
+				</a>
+				<a href="../views/contacto.html">
+					<div class="option">
+						<h4>Contacto</h4>
+					</div>
+				</a>
+			</div>
+		</div>
+
 		<!-- Imagen -->
 		<div id="imagen" class="grid_imagen imagen__turnos">
 			<div class="imagen__flex">
@@ -152,6 +215,8 @@
 					</a>
 				</div>
 			</footer>
+			<script src="../js/scrip.js"></script>
+
 
 </body>
 </html>
