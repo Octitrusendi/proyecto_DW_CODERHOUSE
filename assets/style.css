@@ -63,7 +63,7 @@ a 	  {
     "mapa1"         170px
     "mapa2"         170px
     "footer"        auto /
-      100vw;
+      100%;
 }
     
 .grid_encabezado    {
@@ -411,26 +411,40 @@ a 	  {
 
  
 }
+
+.hr{    
+    border: none;
+    height: 1px !important;
+    width: 90%;
+    margin: 30px auto 0;
+    background-color: #425e3f !important;
+    opacity: .6;
+
+}
 .pieDePagina    {
     width: 95vw;
     margin: auto;
     height: auto;
-    padding: 1.5625rem 0;
+    padding: .2rem 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 
        
    
 }
-.pieDePagina h3{
+
+.pieDePagina h3 {
     text-align: center;
-    font-size: 0,75em;
+    font-size: 1em;
     padding: 0.3125rem ;
        
 }
-.pieDePagina i {
+.pieDePagina__icon   {
+    transform: translateX(10vh);
+}
+.pieDePagina__icon i {
     filter: drop-shadow(1px 1px 1px #999);
     padding: 0.3125rem ;
     font-size: 1.25em;
@@ -441,6 +455,8 @@ a 	  {
     transform: scale(1.3);
     filter: brightness(130%); 
 }
+
+
 /* --------------Turnos------------------------- */
 
 .imagen__turnos     {

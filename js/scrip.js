@@ -8,7 +8,10 @@ var btn_open = document.getElementById("btn_open");
 //Evento para mostrar y ocultar menú
     function open_close_menu(){
         side_menu.classList.toggle("menu__side_move");
+        
     }
+
+
 
 
     window.addEventListener("resize", function(){
@@ -19,3 +22,5 @@ var btn_open = document.getElementById("btn_open");
       
 
     });
+
+    
