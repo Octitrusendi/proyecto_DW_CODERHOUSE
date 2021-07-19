@@ -441,9 +441,7 @@ a 	  {
     padding: 0.3125rem ;
        
 }
-.pieDePagina__icon   {
-    transform: translateX(10vh);
-}
+
 .pieDePagina__icon i {
     filter: drop-shadow(1px 1px 1px #999);
     padding: 0.3125rem ;
