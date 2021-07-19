@@ -17,6 +17,7 @@ body    {
     line-height: 1.3;
 	background-color: #FFFFFF;
 	color: var(--gris) ;
+    max-width: 100vw;
 }
 
 a 	  {
@@ -59,10 +60,7 @@ a 	  {
     "imagen"        90vh
     "seccion1"      auto
     "seccion2"      auto
-    "dondeEstamos"  auto
-    "mapa1"         170px
-    "mapa2"         170px
-    "footer"        auto /
+    "seccion3"      auto/
       100%;
 }
     
@@ -84,6 +82,23 @@ a 	  {
 .grid_seccion2 {
     grid-area: seccion2;
 }
+.grid_seccion3  {
+    grid-area: seccion3;
+    background-image: url(../img/background-footer.svg);
+    background-size: cover;
+}
+
+   
+
+.grid_seccion3    {
+    display: grid;
+    grid-template: 
+    "dondeEstamos"  auto
+    "mapa1"         170px
+    "mapa2"         170px
+    "footer"        auto/
+      100%;
+}
 .grid_dondeEstamos  {
     grid-area: dondeEstamos;
 }
@@ -96,7 +111,8 @@ a 	  {
 
 .grid_footer    {
     grid-area: footer;
-}   
+}
+
 /* Encabezado */
 .encabezado__style	{
 	display: flex;
@@ -136,11 +152,67 @@ a 	  {
 /* Menu mobile */
 .icono__menuresposive   {
     float: right;
+    margin-right: 20px;
     padding: 15px;
     font-size: 1.3em;
     cursor: pointer;
     color: var(--verde);
 }
+.icono__menuresposive label {
+    width: 25px;
+    height: 5px;
+    background-color:  var(--verde);
+    position: absolute;
+    cursor: pointer;
+  }
+  .icono__menuresposive label::before, .icono__menuresposive label::after {
+    content: "";
+    width: 25px;
+    height: 4px;
+    background-color: var(--verde);
+    position: absolute;
+    display: block;
+    color:  var(--verde);
+    transition: all 0.6s var(--animation-curve);
+  }
+  .icono__menuresposive label::before {
+    top: -150%;
+    left: 0%;
+    transform: rotateZ(0deg);
+    transform-origin: left top;
+  }
+  .icono__menuresposive label::after {
+    bottom: -150%;
+    left: 0%;
+    transform: rotateZ(0deg);
+    transform-origin: left bottom;
+  }
+  
+  #toggle:checked ~  label::before {
+    content: "";
+    background-color:  var(--verde);
+    transform: rotateZ(41deg);
+    left: 10%;
+  }
+  
+  #toggle:checked ~ label::after {
+    content: "";
+    background-color:  var(--verde);
+    transform: rotateZ(-41deg);
+    left: 10%;
+  }
+  
+  #toggle:checked ~ label {
+    background-color: white;
+  }
+  
+  #toggle ~  label {
+    transition: all 0.5s var(--animation-curve);
+  }
+  
+  .icono__menuresposive input {
+    display: none;
+  }
 
 .menu   {
     display: none;
@@ -245,10 +317,8 @@ a 	  {
     color: var(--verde);
 }
 
-
-
 .menu__side_move{
-    width: 250px;
+    width: 14rem;
 }
 
 
@@ -257,7 +327,7 @@ a 	  {
 .contenedor	{
 	width: 80vw;
 	height: auto;
-    margin: 3.125rem auto 0;
+    margin: 3.125rem auto 0 auto;
     display: flex; 
     flex-direction: column; 
     flex-wrap: nowrap; 
@@ -400,16 +470,15 @@ a 	  {
 }
 /* Mapa */
 .contenedor__mapa {
-    width: 80vw;
+    width: 90vw;
     height: auto;
     margin: auto;
 }
-.contenedor__mapa > iframe  {
+
+.mapa1, .mapa2   {
     width: 100%;
     padding: 0.625rem;
     filter: drop-shadow(1px 1px 2px #999); 
-
- 
 }
 
 .hr{    
@@ -828,6 +897,15 @@ a 	  {
 
 
 /* Medias */
+@media (max-width: 290px)   {
+    .encabezado__style	{
+        justify-content: center;
+    }
+    
+    .encabezado__titulo h1{
+       display: none; 
+    }
+}
 
 @media (min-width: 500px)   {
     .grid_imagen    {
@@ -837,17 +915,14 @@ a 	  {
         background-position: center;
     }
 
+
 }
 
 @media (min-width: 920px)    {
-    .grid_contenedor    {
+    .grid_seccion3    {
         grid-template: 
-        "encabezado encabezado"    105px
-        "imagen     imagen"        90vh
-        "seccion1   seccion1"      auto
-        "seccion2   seccion2"      auto
-        "mapa1      dondeEstamos"  170px
-        "mapa2      dondeEstamos"   170px
+        "mapa1      dondeEstamos"  200px
+        "mapa2      dondeEstamos"  200px
         "footer     footer"        auto /
           50%          50%;
     }
@@ -977,16 +1052,25 @@ a 	  {
         font-size: 1.5em;    }
     .contenedor__mapa {
         width: 100%;
+        padding: 0px;
+        
     
     }
     .contenedor__mapa > iframe  {
         width: 100%;
+      
     }
-
+    .mapa1 {
+        transform: translateY(90px); 
+    }
+    .mapa2{
+        transform: translateY(60px); 
+    }
     .contenedor__2    {
         width: 100%;
-        margin: auto;
-        height: max-content;
+        margin: 100px auto 0;
+        height: 350px;
+        
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;

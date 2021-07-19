@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Athiti:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/c95374d5c5.js" crossorigin="anonymous"></script>
+<!--     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+ -->    <script src="https://kit.fontawesome.com/c95374d5c5.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style.css">
     <title>Lab. Análisis Clínicos</title>
@@ -24,8 +24,9 @@
             <h1	class=>LABORATORIO DE<br>ANÁLISIS CLÍNICOS</h1>
             </div>	
             <div class="caja_menu" >
-                <div class="icono__menuresposive">
-                    <i class="fas fa-align-justify" id="btn_open"></i>
+                <div class="icono__menuresposive" >
+                    <input type="checkbox" id="toggle">
+                    <label for="toggle" id="btn_open">
                 </div>
                 <ul class="menu">
                     <li><a href="index.html">Inicio</a></li>
@@ -230,8 +231,9 @@
         </div>
 
     </div>  
+    <div class="grid_seccion3 ">
     <!-- Donde estamos -->
-    <div class="grid_dondeEstamos fondoBlancoClaro">
+    <div class="grid_dondeEstamos ">
         <div class=" contenedor contenedor__2">
             <div class="titulo_h2">
                 <h2>¿Dónde nos podes encontrar?</h2>
@@ -256,17 +258,18 @@
         </div>
      </div>
      <!-- Mapas -->
-     <div class="grid_mapa1 fondoBlancoClaro">
+     <div class="grid_mapa1 ">
         <div class="contenedor__mapa">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1996.604619393057!2d-62.10382938102397!3d-32.68936047906735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95c97f3e9bddaa0f%3A0x7f5e74f994046a69!2sLaboratorio%20Bottallo%20Olmos!5e0!3m2!1ses!2sar!4v1622386836367!5m2!1ses!2sar" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1996.604619393057!2d-62.10382938102397!3d-32.68936047906735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95c97f3e9bddaa0f%3A0x7f5e74f994046a69!2sLaboratorio%20Bottallo%20Olmos!5e0!3m2!1ses!2sar!4v1622386836367!5m2!1ses!2sar" style="border:0;" allowfullscreen="" loading="lazy" class="mapa1"></iframe>
         </div>
     </div>
-    <div class="grid_mapa2 fondoBlancoClaro">
+    <div class="grid_mapa2 ">
         <div class="contenedor__mapa">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3356.3262934705012!2d-61.91515258526155!3d-32.73052546830953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95c985264507a49f%3A0x8c3d0544d48e187b!2sLaboratorio%20de%20An%C3%A1lisis%20Cl%C3%ADnicos!5e0!3m2!1ses-419!2sar!4v1625161859457!5m2!1ses-419!2sar" style="border:0;" allowfullscreen="" loading="lazy"></iframe>        </div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3356.3262934705012!2d-61.91515258526155!3d-32.73052546830953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95c985264507a49f%3A0x8c3d0544d48e187b!2sLaboratorio%20de%20An%C3%A1lisis%20Cl%C3%ADnicos!5e0!3m2!1ses-419!2sar!4v1625161859457!5m2!1ses-419!2sar" style="border:0;" allowfullscreen="" loading="lazy" class="mapa2"></iframe>        
+</div>
     </div>
     <!-- Footer -->
-    <footer class="grid_footer fondoBlancoClaro">
+    <footer class="grid_footer ">
         <hr class="hr"> 
         <div class="pieDePagina">  
             <h3>Todos los derechos reservados © 2021</h3>
@@ -275,6 +278,7 @@
             </div>
         </div>
     </footer>
+    </div>
     <script src="js/scrip.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
