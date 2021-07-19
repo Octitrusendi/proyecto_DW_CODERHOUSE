@@ -152,14 +152,14 @@ a 	  {
 /* Menu mobile */
 .icono__menuresposive   {
     float: right;
-    margin-right: 20px;
+    margin-right: 25px;
     padding: 15px;
     font-size: 1.3em;
     cursor: pointer;
     color: var(--verde);
 }
 .icono__menuresposive label {
-    width: 25px;
+    width: 22px;
     height: 5px;
     background-color:  var(--verde);
     position: absolute;
@@ -167,7 +167,7 @@ a 	  {
   }
   .icono__menuresposive label::before, .icono__menuresposive label::after {
     content: "";
-    width: 25px;
+    width: 26px;
     height: 4px;
     background-color: var(--verde);
     position: absolute;
