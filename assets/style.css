@@ -359,7 +359,7 @@ a:hover {
 /* --------------Index------------------------- */
 
 .contenedor	{
-	width: 80vw;
+	width: 95vw;
 	height: auto;
     margin: 3.125rem auto 0 auto;
     display: flex; 
@@ -670,7 +670,7 @@ a:hover {
 }
 
 .contenedor__formulario {
-    width: 80vw;
+    width: 100%;
     
 }
 .seccion__form  {
@@ -792,7 +792,7 @@ a:hover {
 .detalle__seccion2  { 
     word-wrap: break-word;
     margin: 0 auto 1.25rem ;
-    width: 60vw;
+    width: 100%;
     max-width: 550px;
     height: max-content;
     box-shadow:   2px 2px 3px  #999;
@@ -822,7 +822,7 @@ a:hover {
     color: var(--blanco);
     max-width: max-content;
     word-wrap: break-word;
-
+    min-width: 100%;
 }
 
 
@@ -1126,7 +1126,9 @@ a:hover {
         transform: translateX(0);
         opacity: 1;
     }
-  
+    .contenedor {
+        width: 80vw;
+    }
     .titulo_h2	{
         width: 60%;
     }
