@@ -70,7 +70,7 @@ a:hover {
     max-width: 100vw;
     grid-template: 
     "encabezado"    80px
-    "imagen"        90vh
+    "imagen"        80vh
     "seccion1"      auto
     "seccion2"      auto
     "seccion3"      auto/
@@ -88,8 +88,9 @@ a:hover {
     background-size: cover;
     background-attachment: fixed;
     background-position: -16.875rem;
-    
 }
+
+
 .grid_seccion1  {
     grid-area: seccion1;
 }
@@ -157,8 +158,7 @@ a:hover {
     transition: .3s; 
 }
 .encabezado__logo img {
-    height: 65px;
-    width: 70px;
+
 }
 .caja_menu   {
     flex-grow: 2;
@@ -276,6 +276,7 @@ a:hover {
     display: block;
     position: relative;
     transition: color 300ms;
+    
 }
 
 
@@ -407,7 +408,7 @@ a:hover {
     border: none;
     height: 1px ;
     width: 80%;
-    background-color: #425e3f ;
+    background: linear-gradient(100deg, rgba(255,255,255,1) 0%, rgba(142,158,140,1) 25%, rgba(66,94,63,1) 50%, rgba(123,142,121,1) 75%, rgba(255,255,255,1) 100%);
     opacity: .6;
 }
 
@@ -462,9 +463,11 @@ a:hover {
 
 }
 .detalle_extracto hr  {
-    border: solid 0.0625rem var(--verde);
+    border: none;
+    height: 1px ;
     width: 80%;
-    margin: auto;
+    background: linear-gradient(100deg, rgba(255,255,255,1) 0%, rgba(142,158,140,1) 25%, rgba(66,94,63,1) 50%, rgba(123,142,121,1) 75%, rgba(255,255,255,1) 100%);
+    opacity: .6;
 }
 .detalle_extracto p   {
     font-size: 1.125em;
@@ -497,7 +500,7 @@ a:hover {
     border: none;
     height: 1px ;
     width: 80%;
-    background-color: #425e3f ;
+    background: linear-gradient(100deg, rgba(255,255,255,1) 0%, rgba(142,158,140,1) 25%, rgba(66,94,63,1) 50%, rgba(123,142,121,1) 75%, rgba(255,255,255,1) 100%);
     opacity: .6;
 }
 
@@ -554,7 +557,7 @@ a:hover {
     height: 1px ;
     width: 90%;
     margin: 30px auto 0;
-    background-color: #425e3f ;
+    background: linear-gradient(100deg, rgba(255,255,255,1) 0%, rgba(142,158,140,1) 25%, rgba(66,94,63,1) 50%, rgba(123,142,121,1) 75%, rgba(255,255,255,1) 100%);
     opacity: .6;
 
 }
@@ -592,8 +595,14 @@ a:hover {
 /* --------------Turnos------------------------- */
 
 .imagen__turnos     {
-    background-image: url(../img/foto_2.jpg);
+    background-image:  url(../img/foto_2.jpg);
     background-position: -38.875rem;
+    background-attachment: fixed;
+    background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .imagen__flex {
@@ -802,7 +811,7 @@ a:hover {
     height: 1px ;
     width: 90%;
     margin: auto;
-    background-color: #425e3f ;
+    background: linear-gradient(100deg, rgba(255,255,255,1) 0%, rgba(142,158,140,1) 25%, rgba(66,94,63,1) 50%, rgba(123,142,121,1) 75%, rgba(255,255,255,1) 100%);
     opacity: .6;
 }
 
@@ -956,7 +965,11 @@ a:hover {
     transition: all 0.3s;
 }
 .detalle_extracto--contacto hr{
-    border: 1px solid var(--verde);
+    border: none;
+    height: 1px ;
+    width: 80%;
+    background: linear-gradient(100deg, rgba(255,255,255,1) 0%, rgba(142,158,140,1) 25%, rgba(66,94,63,1) 50%, rgba(123,142,121,1) 75%, rgba(255,255,255,1) 100%);
+    opacity: .6;
 }
 
 .detalle_extracto--contacto:hover {    
@@ -1028,7 +1041,7 @@ a:hover {
          
     }
 
-    .grid_imagen    {
+    .imagen__index    {
         background-position: center;
     }
     .icono__menuresposive   {
@@ -1094,6 +1107,7 @@ a:hover {
         transform: translateX(500px);
         opacity: 0;
         transition: .4s;
+        box-shadow: 2px 2px 5px #999;
     }
     .submenu > li {
         padding: 15px 0 15px;
