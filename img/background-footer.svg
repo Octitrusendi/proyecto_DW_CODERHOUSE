@@ -1,11 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="3840" height="2160" viewBox="0 0 3840 2160">
+<svg id="Design" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1998" height="818" viewBox="0 0 1998 818">
   <defs>
     <style>
       .cls-1 {
-        fill: #f1f1f2;
+        fill: #f2ce94;
+        filter: url(#filter);
+      }
+
+      .cls-1, .cls-2 {
         fill-rule: evenodd;
       }
+
+      .cls-2 {
+        fill: #7287ae;
+        filter: url(#filter-2);
+      }
     </style>
+    <filter id="filter" x="-334.812" y="0.844" width="1927.622" height="865.75" filterUnits="userSpaceOnUse">
+      <feFlood result="flood" flood-color="#425e3f"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+    <filter id="filter-2" x="-22.5" y="4.063" width="2020.5" height="816.375" filterUnits="userSpaceOnUse">
+      <feFlood result="flood" flood-color="#f1f1f2"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
   </defs>
-  <path id="Forma_1" data-name="Forma 1" class="cls-1" d="M-250.006,91.048S302.986-80.442,657.372,74.516C1111.05,272.889,1316.36,172.363,1433,146,1809.87,60.82,2281.93.264,2761,212,3290.68,446.107,3960.39,34.394,3994-40l12,2248-4254,33Z"/>
+  <path id="Shape" class="cls-1" d="M-78.215,770.817C-198.569,710.434-291.61,621.933-323.4,513s2.414-238.831,106.9-343.093S65.327-6.947,222.139,1.487c176.638,9.5,296.335,111.709,466.9,134.828,132.282,17.929,282.143-13.8,419.749-59.965,62.71-21.037,124.57-45.225,188.95-60.375s133.15-20.647,187.68-3.687c60.28,18.75,95.83,63.362,104.63,112.666,18.47,103.6-57.46,240.736-177.49,322.476-235.9,160.651-455.014,321.715-759.568,388.231C388.279,893.476,118.224,869.374-78.215,770.817Z"/>
+  <path id="Shape-2" data-name="Shape" class="cls-2" d="M-22.487,53.347S327.163,307.18,820.9,226.3C1230.29,159.234,1544.87-152.245,1998,102.953V820.43H-11.316Z"/>
 </svg>

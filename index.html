@@ -23,6 +23,7 @@
     <link rel="shortcut icon" href="img/favicon.ico">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Athiti:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
    <script src="https://kit.fontawesome.com/c95374d5c5.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -35,13 +36,20 @@
         <nav class="encabezado__style">
             <div class="encabezado__logo">
                     <a href="index.html">
-                    <img src="img/logo.png" alt="Laboratorio analisis clinicos"  title= "Laboratorio de Análisis Clínicos">
+                    <img class="animate__animated animate__fadeInDown" src="img/logo.png" alt="Laboratorio analisis clinicos"  title= "Laboratorio de Análisis Clínicos">
                 </a>
             </div>
             <div class="encabezado__titulo">	
-            <h1	class=>LABORATORIO DE<br>ANÁLISIS CLÍNICOS</h1>
+<!--             <h1	class=>LABORATORIO DE<br>ANÁLISIS CLÍNICOS</h1>
+ -->            <h1 class="titulo ">
+                <span class="typed"></span>
+            </h1> 
+        <div class="titulo" id="cadenas-texto">
+            <h1>Laboratorio de<br>Análisis Clínicos</h1>
+        
+        </div>
             </div>	
-            <div class="caja_menu" >
+            <div class="caja_menu animate__animated animate__fadeInDown" >
                 <div class="icono__menuresposive" >
                     <input type="checkbox" id="toggle">
                     <label for="toggle" id="btn_open">
@@ -64,7 +72,7 @@
             </div>
         </nav>
     </header>
-    <div class="menu__side" id="menu_side">
+    <div class="menu__side " id="menu_side">
         <div class="options__menu">	
             <a href="index.html" class="selected">
                 <div class="option">
@@ -313,6 +321,7 @@
         </div>
     </footer>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
     <script src="js/scrip.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

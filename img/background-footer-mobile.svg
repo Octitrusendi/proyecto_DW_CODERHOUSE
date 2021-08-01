@@ -1,0 +1,31 @@
+<svg id="Design" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1998" height="818" viewBox="0 0 1998 818">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f2ce94;
+        filter: url(#filter);
+      }
+
+      .cls-1, .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #7287ae;
+        filter: url(#filter-2);
+      }
+    </style>
+    <filter id="filter" x="405.219" y="0" width="1927.781" height="866" filterUnits="userSpaceOnUse">
+      <feFlood result="flood" flood-color="#425e3f"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+    <filter id="filter-2" x="0" y="3.219" width="2020.66" height="816.593" filterUnits="userSpaceOnUse">
+      <feFlood result="flood" flood-color="#f1f1f2"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <path id="Shape" class="cls-1" d="M2076.38,770.2c120.37-60.4,213.41-148.927,245.21-257.89s-2.42-238.9-106.91-343.192S1932.83-7.793,1776,.644c-176.65,9.5-296.35,111.741-466.94,134.866-132.29,17.935-282.16-13.8-419.783-59.982C826.564,54.485,764.7,30.291,700.316,15.136s-133.16-20.653-187.69-3.689c-60.29,18.755-95.846,63.38-104.64,112.7-18.479,103.631,57.465,240.806,177.5,322.57,235.919,160.7,455.052,321.807,759.632,388.343C1609.85,892.89,1879.93,868.781,2076.38,770.2Z"/>
+  <path id="Shape-2" data-name="Shape" class="cls-2" d="M2020.65,52.518s-349.68,253.906-843.45,173C767.768,158.436,453.167-153.133,0,102.139V819.823H2009.48Z"/>
+</svg>
