@@ -67,7 +67,7 @@ a:hover {
     display: grid;
     max-width: 100vw;
     grid-template: 
-    "encabezado"    80px
+    "encabezado"    83px
     "imagen"        80vh
     "seccion1"      auto
     "seccion2"      auto
@@ -81,11 +81,7 @@ a:hover {
 }
 .grid_imagen  {
     grid-area: imagen;
-    background-image: url(../img/foto_1.JPG);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: -16.875rem;
+
 }
 
 
@@ -99,6 +95,7 @@ a:hover {
     grid-area: seccion3;
     background-image: url(../img/background-footer-mobile.svg);
     background-size: cover;
+    
 }
 
    
@@ -124,6 +121,13 @@ a:hover {
 
 .grid_footer    {
     grid-area: footer;
+}
+.imagen__index{
+    background-image: url(../img/foto_1-mobile.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: -2.875rem;
 }
 
 /* Encabezado */
@@ -607,9 +611,16 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 88vh;
+    height: 100%;
     width: 80vw;
     margin: 0 20px;
+}
+
+.imagen__flex-index {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0 20px 0 20px;
+    margin: 0 auto;
 }
 .item__flex {
     position: relative;
@@ -619,6 +630,22 @@ a:hover {
     width: 100%;
     max-width: max-content;
 }
+
+.item__flex-index   {
+    position: relative;
+    text-align: center;
+    padding: 0.9375rem;
+    transition: all .3s;
+    width: 100%;
+    max-width: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    word-wrap:break-word;
+}
+
 
 .item__flex:hover{
     transform: scalex(1.2);
@@ -652,7 +679,40 @@ a:hover {
     margin: 0;
     text-align: center;
 }
+.imagen__titulo-index     {
 
+    color: var(--verde);
+    font-size: 2.2em;
+    font-weight: 700;
+    padding: 5px;
+    margin: auto;
+    text-align: left;
+}
+
+.imagen__extracto-index     {
+    color: var(--gris);
+    font-size: 1.3em;
+    transition: all .3s;
+    font-weight: 500;
+    padding: 5px;
+    margin: auto;
+    text-align: left;
+} 
+.imagen__typed-index     {
+    position: relative;
+    left: 0;
+    color: var(--gris);
+    font-size: 1.5em;
+    font-weight: 500;
+    padding: 5px;
+    margin: auto;
+    text-align: left;
+}
+.typed__ciudad    {
+    font-weight: 700;
+    color: var(--verde);
+    font-style: normal;
+}
 .imagen__titulo i   {
     font-size: .8em;
     padding: 5px;
@@ -1017,19 +1077,35 @@ a:hover {
 }
 
 @media (min-width: 500px)   {
-    .grid_imagen    {
-        background-position: center;
+    .imagen__index    {
+        background-image: url(../img/foto_1.jpg);
+        background-position: -16rem;
+       
     }
     .imagen__turnos     {
         background-position: center;
     }
+    .item__flex-index   {
+        width: 80%;
+    }
+}
 
-
+@media (min-width: 700px)   {
+    .imagen__index   {
+        background-image: url(../img/foto_1.jpg);
+        background-position: center;
+    } 
+    .item__flex-index   {
+        width: 60%;
+        gap: 60px;
+    }
 }
 
 @media (min-width: 940px)    {
     
-    
+    .item__flex-index   {
+        width: 50%;
+    }
 
     .grid_seccion3    {
         background-image: url(../img/background-footer.svg);
