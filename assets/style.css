@@ -723,7 +723,7 @@ a:hover {
 }
 
 .imagen__iconDown   {
-  
+    margin-bottom: 20px;
     align-self: flex-end;
 
 }
