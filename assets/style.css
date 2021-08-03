@@ -124,10 +124,13 @@ a:hover {
 }
 .imagen__index{
     background-image: url(../img/foto_1-mobile.jpg);
-    background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     background-position: -2.875rem;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /* Encabezado */
