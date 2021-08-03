@@ -68,7 +68,7 @@ a:hover {
     max-width: 100vw;
     grid-template: 
     "encabezado"    83px
-    "imagen"        80vh
+    "imagen"        85vh
     "seccion1"      auto
     "seccion2"      auto
     "seccion3"      auto/
@@ -612,8 +612,8 @@ a:hover {
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 80vw;
-    margin: 0 20px;
+    width: 100%;
+
 }
 
 .imagen__flex-index {
@@ -629,20 +629,21 @@ a:hover {
     transition: all .3s;
     width: 100%;
     max-width: max-content;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    word-wrap:break-word;
 }
 
 .item__flex-index   {
-    position: relative;
-    text-align: center;
+
     padding: 0.9375rem;
-    transition: all .3s;
     width: 100%;
-    max-width: max-content;
+    height: 90%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: flex-start;
-    gap: 15px;
     word-wrap:break-word;
 }
 
@@ -684,7 +685,7 @@ a:hover {
     color: var(--verde);
     font-size: 2.2em;
     font-weight: 700;
-    padding: 5px;
+    padding: 0.9375rem 0;
     margin: auto;
     text-align: left;
 }
@@ -694,7 +695,7 @@ a:hover {
     font-size: 1.3em;
     transition: all .3s;
     font-weight: 500;
-    padding: 5px;
+    padding: 0.9375rem 0;
     margin: auto;
     text-align: left;
 } 
@@ -704,7 +705,7 @@ a:hover {
     color: var(--gris);
     font-size: 1.5em;
     font-weight: 500;
-    padding: 5px;
+    padding: 0.9375rem 0;
     margin: auto;
     text-align: left;
 }
@@ -719,6 +720,80 @@ a:hover {
     transform: translateX(-50px);
     opacity: 0;
     transition: all .3s;
+}
+
+.imagen__iconDown   {
+  
+    align-self: flex-end;
+
+}
+.imagen__iconDown i{
+    font-size: 2em;
+    color: var(--verde);
+    animation: subeyBaja 1.4s ease-in infinite alternate-reverse;
+    -webkit-animation: subeyBaja 1.4s ease-in infinite alternate-reverse;
+    -ms-animation: subeyBaja 1.4s ease-in infinite alternate-reverse;
+    -moz-animation:  subeyBaja 1.4s ease-in infinite alternate-reverse;
+    -o-animation:  subeyBaja 1.4s ease-in infinite alternate-reverse;
+}
+
+.imagen__iconDown i:hover   {
+    animation-name: none;
+    transform: scale(1.2);
+}
+
+
+
+@keyframes subeyBaja {
+    0%  {
+        transform: translateY(-10%);
+    }
+
+    100%    {
+        transform: translateY(60%);
+    }
+    
+}
+@-webkit-keyframes subeyBaja {
+    0%  {
+        transform: translateY(-10%);
+    }
+
+    100%    {
+        transform: translateY(60%);
+    }
+    
+}
+
+@-moz-keyframes subeyBaja {
+    0%  {
+        transform: translateY(-10%);
+    }
+
+    100%    {
+        transform: translateY(60%);
+    }
+    
+}
+@-o-keyframes subeyBaja {
+    0%  {
+        transform: translateY(-10%);
+    }
+
+    100%    {
+        transform: translateY(60%);
+    }
+    
+}
+@-ms-keyframes subeyBaja {
+    0%  {
+        transform: translateY(-10%);
+    }
+
+    100%    {
+        transform: translateY(60%);
+    }
+    
 }
 
 
@@ -751,7 +826,6 @@ a:hover {
     padding: 0.625rem;
     background-color: rgb(241,241,242);
     box-shadow: 2px 2px 2px #999;
-    transition: all .3s;
     transition: all .3s;
     color: var(--verde);
     font-size: .8em;
@@ -1097,7 +1171,7 @@ a:hover {
     } 
     .item__flex-index   {
         width: 60%;
-        gap: 60px;
+  
     }
 }
 
