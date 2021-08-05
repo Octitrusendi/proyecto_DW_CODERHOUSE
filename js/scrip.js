@@ -1,9 +1,35 @@
+
+
+window.onscroll = function(){
+    scroll = document.documentElement.scrollTop;
+
+    div = document.getElementById("nav");
+
+    if (scroll > 20){
+        div.classList.add('encabezado__style-scroll');
+    }else if (scroll < 20){
+        div.classList.remove('encabezado__style-scroll');
+    }
+    
+    scroll = document.documentElement.scrollTop;
+
+    div = document.getElementById("volverArriba");
+
+    if (scroll > 200){
+        div.classList.add('pieDePagina__icon');
+    }else if (scroll < 200){
+        div.classList.remove('pieDePagina__icon');
+    }
+
+}
+
+
 //Ejecutar función en el evento click
-document.getElementById("btn_open").addEventListener("click", open_close_menu);
+    document.getElementById("btn_open").addEventListener("click", open_close_menu);
 
 //Declaramos variables
-var side_menu = document.getElementById("menu_side");
-var btn_open = document.getElementById("btn_open");
+    var side_menu = document.getElementById("menu_side");
+    var btn_open = document.getElementById("btn_open");
 
 //Evento para mostrar y ocultar menú
     function open_close_menu(){
@@ -61,3 +87,4 @@ var btn_open = document.getElementById("btn_open");
         cursorChar: '|', // Caracter para el cursor
         contentType: 'html', // 'html' o 'null' para texto sin formato
     });
+
