@@ -852,7 +852,7 @@ a:hover {
     height: 2.5rem;
     border: none;
     padding: 0.625rem;
-    background-color: rgb(58, 58, 68);
+    background-color: var(--blancoClaro);
     box-shadow: 2px 2px 2px #999;
     transition: all .3s;
     color: var(--verde);
