@@ -28,6 +28,7 @@ h1, h2, h3, h4, h5, h6  {
 
 a 	  {
     text-decoration:none;
+    color: transparent;
 }
 a:hover {
     color: var(--verde);
@@ -123,13 +124,13 @@ a:hover {
     grid-area: footer;
 }
 .imagen__index{
-    background-image: url(../img/foto_1-mobile.jpg);
-    background-size: cover !important;
-    background-attachment: fixed !important; 
+    background-image: url(../img/foto_1-mobile.png);
+    background-size: cover ;
+    background-attachment: fixed ; 
     background-position: -2.875rem;
-    -o-background-size: cover !important;
-    -moz-background-size: cover !important;
-    -webkit-background-size: cover !important;
+    -o-background-size: cover ;
+    -moz-background-size: cover ;
+    -webkit-background-size: cover ;
     background-repeat: no-repeat;
 }
 
@@ -167,6 +168,8 @@ a:hover {
     transition: .3s; 
 }
 .encabezado__logo img {
+    width: 73px;
+    height: 73px;
 
 }
 .caja_menu   {
@@ -326,6 +329,7 @@ a:hover {
     border: none;
     background: transparent;
     font-size: 18px;
+    padding: 0;
     
 }
 .accordion-button_menu i{
@@ -608,23 +612,24 @@ a:hover {
 .pieDePagina__icon i {
     filter: drop-shadow(1px 1px 1px #999);
     padding: .4125rem ;
-    font-size: 1.25em;
+    font-size: 1.5em;
     color: var(--verde);
     transition: all .5s;
     transform: rotateZ(180deg);
+    -webkit-text-stroke: 1px #1c211c;
+
 }
 
 
 /* --------------Turnos------------------------- */
 
 .imagen__turnos     {
-    background-image:  url(../img/foto_2.jpg);
+    background-image:  url(../img/foto_2.png);
     background-position: -18.875rem;
-    background-attachment: fixed !important;
-    background-size: cover !important;
-    -o-background-size: cover !important;
-    -moz-background-size: cover !important;
-    -webkit-background-size: cover !important;
+    background-attachment: fixed ;
+    -o-background-size: cover ;
+    -moz-background-size: cover ;
+    -webkit-background-size: cover ;
     background-repeat: no-repeat;
 }
 
@@ -657,10 +662,9 @@ a:hover {
 }
 
 .item__flex-index   {
-
     padding: 0.9375rem;
     width: 100%;
-    height: 90%;
+    height: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -744,23 +748,23 @@ a:hover {
 }
 
 .imagen__iconDown   {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     align-self: flex-end;
-    transform: translateY(-40px);
-    height: 40px ;
-
+    transform: translateY(-100%);
+    height: 50px ;
 }
 .imagen__iconDown i{
-    font-size: 2.2em;
+    float: right;
+    font-size: 2.5em;
     color: var(--verde);
-    -webkit-text-stroke: 1px black;
+    -webkit-text-stroke: 1.5px #1c211c;
     text-shadow: 2px 2px 2px rgb(100, 98, 98);
     transition: all 1s;
-    animation: subeyBaja 1.4s ease-in infinite alternate-reverse;
-    -webkit-animation: subeyBaja 1.4s ease-in infinite alternate-reverse;
-    -ms-animation: subeyBaja 1.4s ease-in infinite alternate-reverse;
-    -moz-animation:  subeyBaja 1.4s ease-in infinite alternate-reverse;
-    -o-animation:  subeyBaja 1.4s ease-in infinite alternate-reverse;
+    animation: subeyBaja .9s ease-in infinite alternate-reverse;
+    -webkit-animation: subeyBaja .9s ease-in infinite alternate-reverse;
+    -ms-animation: subeyBaja .9s ease-in infinite alternate-reverse;
+    -moz-animation:  subeyBaja .9s ease-in infinite alternate-reverse;
+    -o-animation:  subeyBaja .9s ease-in infinite alternate-reverse;
 }
 
 
@@ -1047,7 +1051,18 @@ a:hover {
     background-color: var(--blancoClaro);
     color: var(--verde);
 }
+.accordion-item {
+    border: 1px solid var(--verde) ;
+}
 
+.accordion-button::after   {
+    background-image: url(../img/flecha.svg);
+
+}
+.accordion-button:not(.collapsed)::after    {
+    background-image: url(../img/flecha.svg);
+    transform: rotate(-180deg) translateY(7px);
+}
 
 .titulo_os  {
     width: 100%;
@@ -1101,6 +1116,10 @@ a:hover {
 .os__ul i   {
     color: var(--verde);
     margin-right: 0.625rem;
+}
+
+.accordion_indPrev  {
+    padding: 0 50px 0 50px;
 }
 
 /* contacto */
@@ -1180,7 +1199,7 @@ a:hover {
 
 @media (min-width: 500px)   {
     .imagen__index    {
-        background-image: url(../img/foto_1.jpg) !important;
+        background-image: url(../img/foto_1.png) ;
         background-position: -16rem;
        
     }
@@ -1197,7 +1216,7 @@ a:hover {
 
 @media (min-width: 700px)   {
     .imagen__index   {
-           background-position: center !important;
+           background-position: center ;
     } 
     .item__flex-index   {
         width: 60%;
@@ -1406,5 +1425,14 @@ a:hover {
     }
     .buscador__contenedor   {
         max-width: 50%;
+    }
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+    .imagen__index {
+    background-attachment: scroll;
+    }
+    .imagen__turnos {
+        background-attachment: scroll;
     }
 }
