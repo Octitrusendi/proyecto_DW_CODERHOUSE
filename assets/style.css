@@ -332,6 +332,9 @@ a:hover {
     padding: 0;
     
 }
+.options__menu .accordion-item {
+    align-items: flex-start !important;
+}
 .accordion-button_menu i{
     padding: 5px;
     font-size: 16px;
@@ -403,7 +406,8 @@ a:hover {
 }
 
 .extracto 	{
-	width: 70%;
+	width: 90%;
+    margin: auto;
 	text-align: left;
     color: var(--gris);
     padding: 0 0.625rem;
@@ -411,6 +415,7 @@ a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
   
 }
 
@@ -602,8 +607,9 @@ a:hover {
    bottom: 0;
    transform: translateY(-50px) ;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     border-radius: 30% 0 0 30%;
     transition: all .5s;
     z-index: 50;
@@ -643,7 +649,7 @@ a:hover {
 }
 
 .imagen__flex-index {
-    width: 100%;
+    height: 85vh%;
     justify-content: flex-start;
     padding: 0 20px 0 20px;
     margin: 0 auto;
@@ -664,12 +670,15 @@ a:hover {
 .item__flex-index   {
     padding: 0.9375rem;
     width: 100%;
-    height: 60%;
+    height: 90%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: flex-start;
     word-wrap:break-word;
+    position: relative;
+    bottom: 0;
+    align-self: flex-end;
 }
 
 
@@ -694,6 +703,8 @@ a:hover {
     height: 100%;
     opacity: .9;
 }
+
+
 .imagen__titulo  {
     position: relative;
     z-index: 10;
@@ -705,14 +716,20 @@ a:hover {
     margin: 0;
     text-align: center;
 }
+
+.caja_imagen    {
+    width: 100%;
+    margin: 0 auto 5px ;
+    max-height: max-content;
+    padding:  .25rem;
+    text-align: left;
+    word-wrap: break-word;
+}
 .imagen__titulo-index     {
 
     color: var(--verde);
-    font-size: 2.2em;
+    font-size: 1.9em;
     font-weight: 700;
-    padding: 0.9375rem 0;
-    margin: auto;
-    text-align: left;
 }
 
 .imagen__extracto-index     {
@@ -1035,6 +1052,7 @@ a:hover {
 .accordion-button   {
     color: var(--verde);
     font-weight: 500;
+    gap: 6px;
     
 }
 .accordion-button:focus {
@@ -1051,8 +1069,9 @@ a:hover {
     background-color: var(--blancoClaro);
     color: var(--verde);
 }
+
 .accordion-item {
-    border: 1px solid var(--verde) ;
+    border: none;
 }
 
 .accordion-button::after   {
@@ -1063,6 +1082,14 @@ a:hover {
     background-image: url(../img/flecha.svg);
     transform: rotate(-180deg) translateY(7px);
 }
+
+.accordion-flush .accordion-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .titulo_os  {
     width: 100%;
@@ -1118,9 +1145,7 @@ a:hover {
     margin-right: 0.625rem;
 }
 
-.accordion_indPrev  {
-    padding: 0 50px 0 50px;
-}
+
 
 /* contacto */
 
@@ -1195,6 +1220,12 @@ a:hover {
     .encabezado__titulo h1{
        display: none; 
     }
+    .imagen__titulo-index     {
+        font-size: 1.5em;
+    }
+    .pieDePagina__icon i {
+    font-size: 9vw;
+    }
 }
 
 @media (min-width: 500px)   {
@@ -1209,8 +1240,14 @@ a:hover {
     .item__flex-index   {
         width: 80%;
     }
+    .imagen__titulo-index     {
+        font-size: 2em;
+    } 
     .pieDePagina__icon  {
         width: 35px;
+    }
+    .pieDePagina__icon i    {
+        font-size: 1.5em;
     }
 }
 
@@ -1384,9 +1421,6 @@ a:hover {
     }
     .contenedor__mapa > iframe  {
         width: 80%;
-        
-       
-      
     }
     .mapa1 {
         transform: translateY(90px); 
@@ -1397,6 +1431,9 @@ a:hover {
         transform: translateY(60px); 
         
     }
+    .imagen__titulo-index     {
+        font-size: 2.2em;
+    } 
     .contenedor__2    {
         width: 100%;
         margin: 100px auto 0;
