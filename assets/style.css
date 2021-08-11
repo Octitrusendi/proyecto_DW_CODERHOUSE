@@ -133,6 +133,9 @@ a:hover {
     -webkit-background-size: cover ;
     background-repeat: no-repeat;
 }
+.webp-index   {
+    background-image: url(../img/foto_1-mobile.webp);
+}
 
 /* Encabezado */
 .encabezado__style	{
@@ -302,7 +305,7 @@ a:hover {
 }
 
 
-.options__menu .option h4{
+.options__menu .option h3{
     font-weight: 500;
     cursor: pointer;
     font-size: 1em;
@@ -580,6 +583,11 @@ a:hover {
     opacity: .6;
 
 }
+hr:not([size]) {
+    height: 1px;
+    background: linear-gradient(100deg, rgba(255,255,255,1) 0%, rgba(142,158,140,1) 25%, rgba(66,94,63,1) 50%, rgba(123,142,121,1) 75%, rgba(255,255,255,1) 100%);
+    opacity: .6;
+}
 .pieDePagina    {
     width: 95vw;
     margin: auto;
@@ -626,6 +634,22 @@ a:hover {
 
 }
 
+.hr__pieDePagina    {
+    transform: rotateZ(90deg);
+    border: none;
+    height: 2px;
+    width: 1.2em;
+    background: linear-gradient(100deg, rgba(255,255,255,1) 0%, rgba(142,158,140,1) 25%, rgba(66,94,63,1) 50%, rgba(123,142,121,1) 75%, rgba(255,255,255,1) 100%);
+    opacity: .6;
+}
+
+.ot {
+   color: var(--gris);
+    font-style: oblique;
+    font-weight: 600;
+    transition: all .3s;
+}
+
 
 /* --------------Turnos------------------------- */
 
@@ -638,6 +662,9 @@ a:hover {
     -webkit-background-size: cover ;
     background-repeat: no-repeat;
 }
+.webp   {
+    background-image:  url(../img/foto_2.webp); 
+}
 
 .imagen__flex {
     display: flex;
@@ -649,7 +676,7 @@ a:hover {
 }
 
 .imagen__flex-index {
-    height: 85vh%;
+    height: 100%;
     justify-content: flex-start;
     padding: 0 20px 0 20px;
     margin: 0 auto;
@@ -673,7 +700,7 @@ a:hover {
     height: 90%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: flex-start;
     word-wrap:break-word;
     position: relative;
@@ -719,7 +746,7 @@ a:hover {
 
 .caja_imagen    {
     width: 100%;
-    margin: 0 auto 30px ;
+    margin: 0 auto;
     max-height: max-content;
     padding:  .25rem;
     text-align: left;
@@ -1211,7 +1238,7 @@ a:hover {
 }
 
 /* Medias */
-@media (orientation:landscape)     {
+@media (max-width: 700px) and (orientation: landscape)     {
     .caja_imagen    {
         margin:  0 auto;
         padding: 5px;
@@ -1275,6 +1302,9 @@ a:hover {
         background-position: -16rem;
        
     }
+    .webp-index {
+        background-image: url(../img/foto_1.webp) ; 
+    }
     .imagen__turnos     {
         background-position: center;
     }
@@ -1290,6 +1320,7 @@ a:hover {
     .pieDePagina__icon i    {
         font-size: 1.5em;
     }
+    
 }
 
 @media (min-width: 700px)   {
@@ -1300,6 +1331,7 @@ a:hover {
         width: 60%;
   
     }
+
 }
 
 @media (min-width: 940px)    {
