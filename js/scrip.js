@@ -88,3 +88,4 @@ window.onscroll = function(){
         contentType: 'html', // 'html' o 'null' para texto sin formato
     });
 
+
