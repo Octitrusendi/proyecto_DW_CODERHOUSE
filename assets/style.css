@@ -441,6 +441,7 @@ a:hover {
     width: 75vw;
     margin: 0.9375rem auto;
     flex-basis: 15.625rem;
+    min-height: 13.125rem;
     max-height: max-content;
     padding: 3.125rem 1.25rem;
     overflow: hidden;
@@ -998,7 +999,10 @@ hr:not([size]) {
     border: 1px solid var(--verde);
     background-color: var(--verde);
 }
-
+.texArea   {
+    resize: none;
+    min-height: 150px !important;
+}
 
 .input__boton   {
     float: right;
@@ -1172,6 +1176,7 @@ hr:not([size]) {
     display: flex;
     justify-content: center;
     transition: .3s;
+    margin-left: 10px;
     
 }
 .btn-outline-secondary:hover   {
@@ -1588,4 +1593,43 @@ hr:not([size]) {
     .imagen__turnos {
         background-attachment: scroll;
     }
+}
+
+.barra{
+    background-color: transparent;
+    border-radius: 5px;
+    border: 1px solid var(--verde);
+    height: 11px;
+    width: 95%;
+    margin: auto;
+}
+
+
+
+.barra_azul{
+    background-color: var(--verde) ;
+    border-radius: 10px;
+    display: block;
+    height: 8.9px;
+    line-height: 8.9px;
+    text-align: center;
+    width: 0;
+    position: relative;
+    left: -8px;
+
+}
+
+.barra_verde{
+    background-color: var(--verde) !important;
+}
+
+.barra_roja{
+    background-color: #9e0505;
+}
+
+#barra_estado span{
+    color: #fff;
+    font-weight: 500;
+    line-height: 6px;
+    font-size: .8em;
 }

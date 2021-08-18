@@ -186,7 +186,7 @@ Contacto</h3>
    <!------Seccion 2)------> 
 	<div class="grid_seccion2">
 		<div class="contenedor contenedor__reverse contenedor__flex">
-			<form action="extracciones_dom.php" method="POST"	enctype="multipart/form-data" class="contenedor__formulario" id="formSubir">
+			<form action="extracciones_dom.php" method="POST"	enctype="multipart/form-data" class="contenedor__formulario" id="formExtracciones">
 				<div class="row">
 					<div class="form-floating form-floating-sm mb-3 col-md-6">
 						<input type="text" class="form-control form-control-sm" name="nombre" id="floatingInput" placeholder="nombre" required="">
@@ -258,8 +258,14 @@ Contacto</h3>
 						<div class="mb-3 col-md-12">
 							<input id="inputFile" type="file" class="form-control --pointer" aria-label="file example" name="userfile[]" multiple>
 						</div>
+						<div class="barra">
+							<div class="barra_azul" id="barra_estado">
+								<span></span>
+							</div>
+						</div>
 						<div class="mb-3">
-							<button class="btn btn-outline-secondary textVerde input__boton" type="submit" >Solicar Extracción</button>
+							<input type="button" class="btn btn-outline-secondary textVerde input__boton" id="cancelar" value="cancelar">
+							<button class="btn btn-outline-secondary textVerde input__boton" type="submit" id="submit" >Solicar Extracción</button>
 						  </div>
 					</div>
 				</form>
@@ -344,6 +350,68 @@ Contacto</h3>
 			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
 			<script src="../js/bootstrap-datetimepicker.min.js"></script>
+			<script>
+				document.addEventListener("DOMContentLoaded", () => {
+				let form = document.getElementById('formExtracciones');
+				
+				form.addEventListener("submit", function(event){
+					event.preventDefault();
+					subir_archivo(this);
+					document.getElementById('submit').disabled=true;
+					
+				barra_estado.classList.remove('barra_verde', 'barra_roja');
+		
+		
+					});
+				});
+		
+				function subir_archivo(form){
+		
+					let barra_estado = form.children[0].children[15].children[0],
+					span = barra_estado.children[0],
+					botom_cancelar = form.children[0].children[16].children[0];
+					botom_enviar = form.children[0].children[16].children[1];
+		
+					
+		
+						//peticion
+						let peticion = new XMLHttpRequest();
+		
+						//progreso
+						peticion.upload.addEventListener("progress", (event) => {
+							let porcentaje = Math.round((event.loaded / event.total) * 100);
+		
+							console.log(porcentaje);
+		
+							barra_estado.style.width = porcentaje+'%';
+							span.innerHTML=porcentaje+'%'+' | Por favor espere...';
+						});
+		
+						//finalizado
+						peticion.addEventListener("load", () =>{
+							barra_estado.classList.add('barra_verde');
+							span.innerHTML = "Por favor espere...";
+							window.location="https://laboratorio.net.ar/views/gracias_por_contactarnos.html";
+		
+		
+						});
+		
+						//enviar datos
+						peticion.open('post', 'extracciones_dom.php');
+						peticion.send(new FormData(form));
+		
+						//cancelar
+						botom_cancelar.addEventListener("click", () =>{
+							peticion.abort();
+							barra_estado.classList.remove('barra_verde');
+							barra_estado.classList.add('barra_roja');
+							span.innerHTML="Proceso cancelado";
+							document.getElementById('submit').disabled=false;
+		
+						});
+		
+				}
+			</script>
 			<script>
 				$(function () {
 					$.extend(true, $.fn.datetimepicker.defaults, {
