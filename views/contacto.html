@@ -344,7 +344,7 @@ Contacto</h3>
 					span = barra_estado.children[0],
 					botom_cancelar = form.children[0].children[9].children[0];
 					botom_enviar = form.children[0].children[9].children[1];
-
+					progress = form.children[0].children[8];
 					
 
 						//peticion
@@ -355,7 +355,8 @@ Contacto</h3>
 							let porcentaje = Math.round((event.loaded / event.total) * 100);
 
 							console.log(porcentaje);
-
+						
+							progress.classList.add ('barra_show');
 							barra_estado.style.width = porcentaje+'%';
 							span.innerHTML=porcentaje+'%'+' | Por favor espere...';
 						});

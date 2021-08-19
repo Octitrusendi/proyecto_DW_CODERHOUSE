@@ -385,8 +385,9 @@ Gral. Roca</h3>
 
 			let barra_estado = form.children[0].children[14].children[0],
 			span = barra_estado.children[0],
-			botom_cancelar = form.children[0].children[15].children[0];
-			botom_enviar = form.children[0].children[15].children[1];
+			botom_cancelar = form.children[0].children[15].children[0],
+			botom_enviar = form.children[0].children[15].children[1],
+			progress = form.children[0].children[14];
 
 			
 
@@ -399,6 +400,7 @@ Gral. Roca</h3>
 
 					console.log(porcentaje);
 
+					progress.classList.add ('barra_show');
 					barra_estado.style.width = porcentaje+'%';
 					span.innerHTML=porcentaje+'%'+' | Por favor espere...';
 				});

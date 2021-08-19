@@ -259,7 +259,7 @@ Contacto</h3>
 						<div class="mb-3 col-md-12">
 							<input id="inputFile" type="file" class="form-control --pointer" aria-label="file example" name="userfile[]" multiple>
 						</div>
-						<div class="barra">
+						<div class="barra" ">
 							<div class="barra_azul" id="barra_estado">
 								<span></span>
 							</div>
@@ -362,7 +362,6 @@ Contacto</h3>
 					
 				barra_estado.classList.remove('barra_verde', 'barra_roja');
 		
-		
 					});
 				});
 		
@@ -370,9 +369,9 @@ Contacto</h3>
 		
 					let barra_estado = form.children[0].children[15].children[0],
 					span = barra_estado.children[0],
-					botom_cancelar = form.children[0].children[16].children[0];
-					botom_enviar = form.children[0].children[16].children[1];
-		
+					botom_cancelar = form.children[0].children[16].children[0],
+					botom_enviar = form.children[0].children[16].children[1],
+					progress = form.children[0].children[15];
 					
 		
 						//peticion
@@ -383,7 +382,8 @@ Contacto</h3>
 							let porcentaje = Math.round((event.loaded / event.total) * 100);
 		
 							console.log(porcentaje);
-		
+
+							progress.classList.add ('barra_show');
 							barra_estado.style.width = porcentaje+'%';
 							span.innerHTML=porcentaje+'%'+' | Por favor espere...';
 						});
