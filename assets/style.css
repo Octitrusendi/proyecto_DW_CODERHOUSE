@@ -1236,28 +1236,75 @@ hr:not([size]) {
     transform: scale(1.1);
 }
 .caja__cardConocenos    {
-    width: 75vw;
+    width: 300px;
     max-width: 350px;
     margin: 0.9375rem auto;
-    flex-basis: 15.625rem;
     max-height: max-content;
     overflow: hidden;
     word-wrap: break-word;
-    box-shadow:   2px 2px 3px  #999;
-    border-radius: .25rem;
+    border-radius: .50rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
     text-align: center;
+    transition: all .3s ease-in-out;
 }
 
-.img__conocenos {
-    height: 100%;
+
+.caja__cardConocenos:hover  {
+    width: 350px;
+}
+
+.cover {
     width: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
+.cover img    {
+    width: 250px;
+    height: 280px;
+    display: block;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    top: 40px;
+    filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.5));
+    transition: all .3s ease-in-out;
+}
+.caja__cardConocenos:hover .cover img{
+    top: 10px;
+    filter: none;
+}
+
+.img__back  {
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    background-image: url(../img/bg_staff.png);
+    bottom: -50px;
+    left: 0;
+    background-size: cover;
+    border-radius: 20px 20px 0 0 ;
+    transition: all .3s ease-in-out;
+}
+.caja__cardConocenos:hover .img__back{
+    bottom: -10px;
+}
+
+
+
+.descripcion_conocenos  {
+    width: 100%;
+    padding: 10px;
+    transition: all .3s ease-in-out;
+
+}
+
+.caja__cardConocenos:hover .descripcion_conocenos  {
+    padding: 25px;
+}
 
 
 .card__tituloConocenos  {
@@ -1266,6 +1313,7 @@ hr:not([size]) {
 	font-size: 1.875em;
     margin-bottom: 0.625rem;
     padding: 10px;
+
 }
 
 /* Medias */
