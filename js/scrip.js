@@ -49,6 +49,7 @@ window.onscroll = function(){
 
     });
 
+
     const typed = new Typed('.typed', {
         strings: [
         
@@ -87,5 +88,7 @@ window.onscroll = function(){
         cursorChar: '|', // Caracter para el cursor
         contentType: 'html', // 'html' o 'null' para texto sin formato
     });
+
+
 
 

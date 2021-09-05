@@ -208,25 +208,30 @@ Contacto</h3>
 		<div class="contenedor contenedor__reverse contenedor__flex">
 			<form action="autorizaciones.php" method="POST"	enctype="multipart/form-data" class="contenedor__formulario " id="formAutorizaciones">
 				<div class="row">
-					<div class="form-floating form-floating-sm mb-3 col-md-6">
+					<div id="grupo__nombre"  class="form-floating form-floating-sm mb-3 col-md-6">
 						<input type="text" class="form-control form-control-sm" id="floatingInput" placeholder="nombre" name="nombre" required="">
-						<label for="floatingInput">Nombre Completo *</label>
+						<label class="label__correcto-activo"  for="floatingInput">Nombre Completo *</label>
+						<label class="label__error-off" for="floatingInput">Ingrese un Nombre correcto *</label>
 					  </div>
-					  <div class="form-floating mb-3 col-md-6">
+					  <div id="grupo__apellido"  class="form-floating mb-3 col-md-6">
 						<input type="text" class="form-control " id="floatingInput" placeholder="apellido" name="apellido" required="">
-						<label for="floatingInput">Apellido *</label>
+						<label class="label__correcto-activo"  for="floatingInput">Apellido *</label>
+						<label class="label__error-off" for="floatingInput">Ingrese un Apellido correcto *</label>
 					  </div>
-					  <div class="form-floating mb-3 col-md-6">
+					  <div id="grupo__dni"  class="form-floating mb-3 col-md-6">
 						<input type="number" class="form-control " id="floatingInput" placeholder="dni" name="dni" required="">
-						<label for="floatingInput">DNI *</label>
+						<label class="label__correcto-activo"  for="floatingInput">DNI *</label>
+						<label class="label__error-off" for="floatingInput">Ingrese un DNI correcto, sin puntos *</label>
 					  </div>
-					  <div class="form-floating mb-3 col-md-6">
+					  <div id="grupo__tel"  class="form-floating mb-3 col-md-6">
 						<input type="tel" class="form-control " id="floatingInput" placeholder="tel" name="tel" required="">
-						<label for="floatingInput">Teléfono *</label>
+						<label class="label__correcto-activo"  for="floatingInput">Teléfono *</label>
+						<label class="label__error-off" for="floatingInput">Ingrese un Teléfono correcto, con su caracteristica *</label>
 					  </div>
-					  <div class="form-floating mb-3 col-md-12">
+					  <div id="grupo__email"  class="form-floating mb-3 col-md-12">
 						<input type="email" class="form-control " id="floatingInput" placeholder="email" name="email" required="">
-						<label for="floatingInput">e-mail *</label>
+						<label class="label__correcto-activo"  for="floatingInput">e-mail *</label>
+						<label class="label__error-off" for="floatingInput">Ingrese un email correcto *</label>
 					  </div>
 					  <div class="seccion__form">
 						<p>Adjunte una foto de su orden médica. </p>
@@ -248,6 +253,9 @@ Contacto</h3>
 					<div class="mb-3">
 						<input type="button" class="btn btn-outline-secondary textVerde input__boton" id="cancelar" value="cancelar">
 						<button class="btn btn-outline-secondary textVerde input__boton" type="submit" id="submit">Enviar</button>
+						</div>
+						<div class="formulario__mensaje" id="formulario__mensaje">
+							<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor completa el formulario correctamente. </p>
 						</div>
 					</div>
 				</form>	
@@ -331,16 +339,92 @@ Contacto</h3>
 			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
 			<script>
+		const formulario = document.getElementById('formAutorizaciones');
+		const inputs = document.querySelectorAll('#formAutorizaciones input');
+
+		const expresiones = {
+			nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+			apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+			correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+			telefono: /^\d{7,14}$/, // 7 a 14 numeros.
+			dni: /^\d{8,8}$/ // 7 a 14 numeros.
+
+		}
+
+		const campos = {
+		nombre: false,
+		apellido: false,
+		dni: false,
+		tel: false,
+		email: false,
+		}
+
+		const validarFormulario = (e) => {
+			switch (e.target.name) {
+				case "nombre":
+					validarCampo(expresiones.nombre, e.target, 'nombre')
+				break;
+				case "apellido":
+					validarCampo(expresiones.apellido, e.target, 'apellido');
+				break;
+				case "dni":
+					validarCampo(expresiones.dni, e.target, 'dni');
+				break;
+				case "tel":
+					validarCampo(expresiones.telefono, e.target, 'tel');
+					if(expresiones.telefono.test(e.target.value)){
+						document.querySelector(`#grupo__tel input`).classList.remove('form-control-grande');
+					}else{
+						document.querySelector(`#grupo__tel input`).classList.add('form-control-grande');
+					};
+				break;
+				case "email":
+					validarCampo(expresiones.correo, e.target, 'email');
+				break;
+				case "fecha":
+					validarFecha(expresiones.fecha, e.target);
+				break;
+				case "hora":
+					validarHorario(expresiones.hora, e.target);
+				break;
+			}
+		}
+
+		const validarCampo = (expresion, input, campo) => {
+			if(expresion.test(input.value)){
+				document.querySelector(`#grupo__${campo} input`).classList.remove('formulario__grupo-incorrecto');
+				document.querySelector(`#grupo__${campo} input`).classList.remove('form-control-error');
+				document.querySelector(`#grupo__${campo} .label__error-off`).classList.remove('label__error-activo');
+				document.querySelector(`#grupo__${campo} .label__correcto-activo`).classList.remove('label__correcto-off');
+				campos[campo] = true;
+			}else{
+				document.querySelector(`#grupo__${campo} input`).classList.add('formulario__grupo-incorrecto');
+				document.querySelector(`#grupo__${campo} input`).classList.add('form-control-error');
+				document.querySelector(`#grupo__${campo} .label__error-off`).classList.add('label__error-activo');
+				document.querySelector(`#grupo__${campo} .label__correcto-activo`).classList.add('label__correcto-off');
+				campos[campo] = false;
+			}
+		}
+
+		inputs.forEach((input) => {
+			input.addEventListener('keyup', validarFormulario);
+			input.addEventListener('blur', validarFormulario);
+		});
 				document.addEventListener("DOMContentLoaded", () => {
 				let form = document.getElementById('formAutorizaciones');
 				
 				form.addEventListener("submit", function(event){
 					event.preventDefault();
-					subir_archivo(this);
-					document.getElementById('submit').disabled=true;
+					if(campos.nombre && campos.apellido && campos.dni && campos.tel && campos.email){
+						subir_archivo(this);
+						document.getElementById('submit').disabled=true;
+						barra_estado.classList.remove('barra_verde', 'barra_roja');
+						document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
 					
-				barra_estado.classList.remove('barra_verde', 'barra_roja');
-		
+					}else{
+						document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+					}
+					
 		
 					});
 				});
@@ -371,6 +455,7 @@ Contacto</h3>
 						//finalizado
 						peticion.addEventListener("load", () =>{
 							barra_estado.classList.add('barra_verde');
+							formulario.reset();
 							span.innerHTML = "Por favor espere...";
 							window.location="https://laboratorio.net.ar/views/gracias_por_contactarnos.html";
 		

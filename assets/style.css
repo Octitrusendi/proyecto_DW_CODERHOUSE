@@ -1712,3 +1712,57 @@ hr:not([size]) {
     position: absolute;
     width: 200px;
 }
+
+.formulario__grupo-incorrecto {
+	color: #bb2929 !important ;
+}
+.formulario__grupo-incorrecto:focus {
+    color: #bb2929 ;
+    border: 1px solid #bb2929 ;
+}
+.label__error-activo   {
+    color: #bb2929 !important;
+    display: block !important;
+}
+.label__error-off {
+    display: none;
+ 
+}
+
+.label__correcto-off    {
+    display: none;
+}
+
+.formulario__mensaje {
+    width: 90%;
+    margin: auto;
+	background: #F66060;
+	padding: 15px;
+	border-radius: 3px;
+	display: none;
+    color: var(--gris);
+}
+
+.formulario__mensaje-activo {
+	display: block;
+}
+
+.formulario__mensaje p {
+	margin: 0;
+}
+.form-control-error{
+    border: 1px solid #bb2929;
+}
+
+.form-control-grande:focus{
+    transform: scale(1.1);
+    height: 3.2rem;
+}
+
+.form-control-FyH::placeholder{
+    color: #bb2929 !important;
+}
+
+.form-control::placeholder{
+    color: var(--verde);
+}

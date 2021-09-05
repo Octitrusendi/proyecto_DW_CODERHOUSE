@@ -27,6 +27,7 @@ $apellido = $_POST['apellido'];
 $dni = $_POST['dni'];
 $tel = $_POST['tel'];
 $direccion = $_POST['direccion'];
+$altura = $_POST['altura'];
 $email = $_POST['email'];
 $fecha = $_POST['fecha'];
 $hora = $_POST['hora'];
@@ -69,9 +70,13 @@ $message = "<html>
         <td style='padding: 5px; text-align: center;'><strong>" . $tel ."</strong></td>    
     </tr>
     <tr>  
-    <td style='padding: 5px; text-align: center;'><strong>Dirección</strong></td>
+    <td style='padding: 5px; text-align: center;'><strong>Calle</strong></td>
     <td style='padding: 5px; text-align: center;'><strong>" . $direccion ."</strong></td>    
 </tr>
+<tr>  
+<td style='padding: 5px; text-align: center;'><strong>Altura</strong></td>
+<td style='padding: 5px; text-align: center;'><strong>" . $altura ."</strong></td>    
+</tr
     <tr>  
         <td style='padding: 5px; text-align: center;'><strong>email</strong></td>
         <td style='padding: 5px; text-align: center;'><strong>" . $email ."</strong></td>    

@@ -209,40 +209,51 @@ Contacto</h3>
 		<div class="contenedor contenedor__reverse contenedor__flex">
 			<form action="extracciones_dom.php" method="POST"	enctype="multipart/form-data" class="contenedor__formulario" id="formExtracciones">
 				<div class="row">
-					<div class="form-floating form-floating-sm mb-3 col-md-6">
+					<div id="grupo__nombre" class="form-floating form-floating-sm mb-3 col-md-6">
 						<input type="text" class="form-control form-control-sm" name="nombre" id="floatingInput" placeholder="nombre" required="">
-						<label for="floatingInput">Nombre Completo *</label>
+						<label class="label__correcto-activo" for="floatingInput">Nombre Completo *</label>
+						<label class="label__error-off" for="floatingInput">Ingrese un Nombre correcto*</label>
 					  </div>
-					  <div class="form-floating mb-3 col-md-6">
+					  <div id="grupo__apellido" class="form-floating mb-3 col-md-6">
 						<input type="text" class="form-control " id="floatingInput" placeholder="apellido" name="apellido" required="">
-						<label for="floatingInput">Apellido *</label>
+						<label class="label__correcto-activo" for="floatingInput">Apellido *</label>
+						<label class="label__error-off" for="floatingInput">Ingrese un Apellido correcto*</label>
 					  </div>
-					  <div class="form-floating mb-3 col-md-6">
+					  <div id="grupo__dni" class="form-floating mb-3 col-md-6">
 						<input type="number" class="form-control " id="floatingInput" placeholder="dni" name="dni" required="">
-						<label for="floatingInput">DNI *</label>
+						<label class="label__correcto-activo" for="floatingInput">DNI *</label>
+						<label class="label__error-off" for="floatingInput">Ingrese un DNI correcto, sin puntos*</label>
 					  </div>
-					  <div class="form-floating mb-3 col-md-6">
+					  <div id="grupo__tel" class="form-floating mb-3 col-md-6">
 						<input type="tel" class="form-control " id="floatingInput" placeholder="tel" name="tel" required="">
-						<label for="floatingInput">Teléfono *</label>
+						<label class="label__correcto-activo" for="floatingInput">Teléfono *</label>
+						<label class="label__error-off" for="floatingInput">Ingrese un Teléfono correcto, con su caracteristica*</label>
 					  </div>
-					  <div class="form-floating mb-3 col-md-12">
+					  <div id="grupo__direccion"  class="form-floating mb-3 col-md-9 col-8">
 						<input type="text" class="form-control " id="floatingInput" placeholder="Direccion" name="direccion" required="">
-						<label for="floatingInput">Dirección *</label>
+						<label class="label__correcto-activo" for="floatingInput">Calle *</label>
+						<label class="label__error-off" for="floatingInput">Ingrese una calle *</label>
 					  </div>
-					  <div class="form-floating mb-3 col-md-12">
+					  <div id="grupo__altura"  class="form-floating mb-3 col-md-3 col-4">
+						<input type="number" class="form-control " id="floatingInput" placeholder="Altura" name="altura" required="">
+						<label class="label__correcto-activo" for="floatingInput">Número *</label>
+						<label class="label__error-off" for="floatingInput">Número *</label>
+					  </div>
+					  <div id="grupo__email" class="form-floating mb-3 col-md-12">
 						<input type="email" class="form-control " id="floatingInput" placeholder="email" name="email" required="">
-						<label for="floatingInput">e-mail *</label>
+						<label class="label__correcto-activo" for="floatingInput">e-mail *</label>
+						<label class="label__error-off" for="floatingInput">Ingrese un email correcto*</label>	
 					  </div>
 					  <div class="mb-3 col-md-12">
-					  <select class="form-select form-control --pointer" name="sede">
-						<option value="vacio" selected>Localidad</option>
+					  <select class="form-select form-control --pointer" name="sede" required="">
+						<option value="">Localidad</option>
 						<option value="MsJz">Marcos Juárez</option>
 						<option value="Roca">General Roca</option>
 					  </select>
 					</div>
 					<div class="mb-3 col-md-12">
-						<select class="form-select form-control --pointer" name="tipoDeAtencion">
-						  <option value="vacio" selected>Elija una opción</option>
+						<select class="form-select form-control --pointer" name="tipoDeAtencion" required="">
+						  <option value="">Elija una opción</option>
 						  <option value="ObraSocial" required="" >Obra Social</option>
 						  <option value="Particular" required="">Particular</option>
 						</select>
@@ -252,18 +263,18 @@ Contacto</h3>
 					</div>
 					  <div class="mb-3 col-md-7">
 							<div class="input-group" id="calendario">
-								<input type="text" class="form-control" placeholder="Seleccione una fecha" name="fecha" readonly >
+								<input type="text" class="form-control" placeholder="Seleccione una fecha" name="fecha" required="" >
 								<div class="input-group-addon input-group-prepend">
-									<span class="input-group-text icon-form"><i class="fas fa-calendar"></i></span>
+									<span  class="input-group-text icon-form"><i id="iconFecha" class="fas fa-calendar"></i></span>
 								</div>
 								</div>
 					  </div>
 					  <div class="mb-3 col-md-5">
 							<div class="input-group" id="horario">
-								<input type="text" class="form-control" placeholder="Seleccione un horario" name="hora" readonly >
+								<input type="text" class="form-control" placeholder="Seleccione un horario" name="hora" required="" >
 								
 								<div class="input-group-addon input-group-prepend icon-form">
-									<span class="input-group-text icon-form"><i class="fas fa-clock"></i></span>
+									<span  class="input-group-text icon-form"><i id="iconHora" class="fas fa-clock"></i></span>
 								</div>
 							</div>
 						</div>	
@@ -288,6 +299,9 @@ Contacto</h3>
 							<input type="button" class="btn btn-outline-secondary textVerde input__boton" id="cancelar" value="cancelar">
 							<button class="btn btn-outline-secondary textVerde input__boton" type="submit" id="submit" >Solicar Extracción</button>
 						  </div>
+						  <div class="formulario__mensaje" id="formulario__mensaje">
+							<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor completa el formulario correctamente. </p>
+						</div>
 					</div>
 				</form>
 
@@ -371,27 +385,150 @@ Contacto</h3>
 			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
 			<script src="../js/bootstrap-datetimepicker.min.js"></script>
-			<script>
+	<script>
+		const formulario = document.getElementById('formExtracciones');
+   		const inputs = document.querySelectorAll('#formExtracciones input');
+
+    const expresiones = {
+		fecha: /^(?:(?:(?:0?[1-9]|1\d|2[0-8])[/-](?:0?[1-9]|1[0-2])|(?:29|30)[/-](?:0?[13-9]|1[0-2])|31[/](?:0?[13578]|1[02]))[/-](?:0{2,3}[1-9]|0{1,2}[1-9]\d|0?[1-9]\d{2}|[1-9]\d{3})|29[/-]0?2[/-](?:\d{1,2}(?:0[48]|[2468][048]|[13579][26])|(?:0?[48]|[13579][26]|[2468][048])00))$/,
+		hora:/^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/,
+
+		nombre: /^[a-zA-ZÀ-ÿ\s]{3,40}$/, // Letras y espacios, pueden llevar acentos.
+		apellido: /^[a-zA-ZÀ-ÿ\s]{3,40}$/, // Letras y espacios, pueden llevar acentos.
+		direccion: /^[a-zA-ZÀ-ÿ\s 0-9]{3,40}$/,
+		altura: /^\d{1,5}$/,
+		correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+		telefono: /^\d{7,14}$/, // 7 a 14 numeros.
+		dni: /^\d{8,8}$/ // 7 a 14 numeros.
+
+    }
+	document.querySelector(`#calendario input`).readOnly = true;
+	document.querySelector(`#horario input`).readOnly = true;
+
+	const campos = {
+	nombre: false,
+	apellido: false,
+	dni: false,
+	tel: false,
+	direccion:false,
+	altura:false,
+	email: false,
+	fecha: false,
+	hora: false
+	}
+
+    const validarFormulario = (e) => {
+        switch (e.target.name) {
+            case "nombre":
+                validarCampo(expresiones.nombre, e.target, 'nombre')
+            break;
+            case "apellido":
+                validarCampo(expresiones.apellido, e.target, 'apellido');
+            break;
+            case "dni":
+                validarCampo(expresiones.dni, e.target, 'dni');
+            break;
+            case "tel":
+				validarCampo(expresiones.telefono, e.target, 'tel');
+				if(expresiones.telefono.test(e.target.value)){
+					document.querySelector(`#grupo__tel input`).classList.remove('form-control-grande');
+				}else{
+					document.querySelector(`#grupo__tel input`).classList.add('form-control-grande');
+				};
+            break;
+			case "direccion":
+                validarCampo(expresiones.direccion, e.target, 'direccion');
+            break;
+			case "altura":
+                validarCampo(expresiones.altura, e.target, 'altura');
+            break;
+            case "email":
+                validarCampo(expresiones.correo, e.target, 'email');
+            break;
+            case "fecha":
+                validarFecha(expresiones.fecha, e.target);
+            break;
+            case "hora":
+                validarHorario(expresiones.hora, e.target);
+            break;
+        }
+    }
+
+    const validarCampo = (expresion, input, campo) => {
+        if(expresion.test(input.value)){
+            document.querySelector(`#grupo__${campo} input`).classList.remove('formulario__grupo-incorrecto');
+			document.querySelector(`#grupo__${campo} input`).classList.remove('form-control-error');
+
+            document.querySelector(`#grupo__${campo} .label__error-off`).classList.remove('label__error-activo');
+            document.querySelector(`#grupo__${campo} .label__correcto-activo`).classList.remove('label__correcto-off');
+			campos[campo] = true;
+        }else{
+            document.querySelector(`#grupo__${campo} input`).classList.add('formulario__grupo-incorrecto');
+			document.querySelector(`#grupo__${campo} input`).classList.add('form-control-error');
+            document.querySelector(`#grupo__${campo} .label__error-off`).classList.add('label__error-activo');
+            document.querySelector(`#grupo__${campo} .label__correcto-activo`).classList.add('label__correcto-off');
+			campos[campo] = false;
+        }
+    }
+	const validarFecha = (expresion, input) => {
+	if(expresion.test(input.value)){
+				document.querySelector(`#calendario input`).classList.remove('formulario__grupo-incorrecto');
+				document.querySelector(`#calendario input`).classList.remove('form-control-error');
+				document.querySelector(`#calendario input`).classList.remove('form-control-FyH');
+				document.getElementById('iconFecha').style.color = null;
+				campos[`fecha`] = true;
+        		}else{
+				document.querySelector(`#calendario input`).classList.add('formulario__grupo-incorrecto');
+				document.querySelector(`#calendario input`).classList.add('form-control-error');
+				document.querySelector(`#calendario input`).classList.add('form-control-FyH');
+				document.getElementById('iconFecha').style.color = "#bb2929";
+				campos[`fecha`] = false;
+				}
+	}
+	const validarHorario = (expresion, input) => {
+	if(expresion.test(input.value)){
+				document.querySelector(`#horario input`).classList.remove('formulario__grupo-incorrecto');
+				document.querySelector(`#horario input`).classList.remove('form-control-error');
+				document.querySelector(`#horario input`).classList.remove('form-control-FyH');
+				document.getElementById('iconHora').style.color = null;
+				campos[`hora`] = true;
+        		}else{
+				document.querySelector(`#horario input`).classList.add('formulario__grupo-incorrecto');
+				document.querySelector(`#horario input`).classList.add('form-control-error');
+				document.querySelector(`#horario input`).classList.add('form-control-FyH');
+				document.getElementById('iconHora').style.color = "#bb2929";
+				campos[`hora`] = false;
+				}
+	}
+    inputs.forEach((input) => {
+        input.addEventListener('keyup', validarFormulario);
+        input.addEventListener('blur', validarFormulario);
+    });
+
 				document.addEventListener("DOMContentLoaded", () => {
 				let form = document.getElementById('formExtracciones');
 				
 				form.addEventListener("submit", function(event){
 					event.preventDefault();
+					if(campos.nombre && campos.apellido && campos.dni && campos.tel && campos.email && campos.fecha && campos.hora && campos.direccion && campos.altura){
 					subir_archivo(this);
 					document.getElementById('submit').disabled=true;
-					
-				barra_estado.classList.remove('barra_verde', 'barra_roja');
+					barra_estado.classList.remove('barra_verde', 'barra_roja');
+					document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
+					}else{
+						document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+					}
 		
 					});
 				});
 		
 				function subir_archivo(form){
 		
-					let barra_estado = form.children[0].children[15].children[0],
+					let barra_estado = form.children[0].children[16].children[0],
 					span = barra_estado.children[0],
-					botom_cancelar = form.children[0].children[16].children[0],
-					botom_enviar = form.children[0].children[16].children[1],
-					progress = form.children[0].children[15];
+					botom_cancelar = form.children[0].children[17].children[0],
+					botom_enviar = form.children[0].children[17].children[1],
+					progress = form.children[0].children[16];
 					
 		
 						//peticion
@@ -411,6 +548,7 @@ Contacto</h3>
 						//finalizado
 						peticion.addEventListener("load", () =>{
 							barra_estado.classList.add('barra_verde');
+							formulario.reset();
 							span.innerHTML = "Por favor espere...";
 							window.location="https://laboratorio.net.ar/views/gracias_por_contactarnos.html";
 		
