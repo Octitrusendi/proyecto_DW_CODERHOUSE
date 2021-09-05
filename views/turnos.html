@@ -476,11 +476,13 @@ Gral. Roca</h3>
 	if(expresion.test(input.value)){
 				document.querySelector(`#calendario input`).classList.remove('formulario__grupo-incorrecto');
 				document.querySelector(`#calendario input`).classList.remove('form-control-error');
+				document.querySelector(`#calendario input`).classList.remove('form-control-FyH');
 				document.getElementById('iconFecha').style.color = null;
 				campos[`fecha`] = true;
         		}else{
 				document.querySelector(`#calendario input`).classList.add('formulario__grupo-incorrecto');
 				document.querySelector(`#calendario input`).classList.add('form-control-error');
+				document.querySelector(`#calendario input`).classList.add('form-control-FyH');
 				document.getElementById('iconFecha').style.color = "#bb2929";
 				campos[`fecha`] = false;
 				}
@@ -489,11 +491,13 @@ Gral. Roca</h3>
 	if(expresion.test(input.value)){
 				document.querySelector(`#horario input`).classList.remove('formulario__grupo-incorrecto');
 				document.querySelector(`#horario input`).classList.remove('form-control-error');
+				document.querySelector(`#horario input`).classList.remove('form-control-FyH');
 				document.getElementById('iconHora').style.color = null;
 				campos[`hora`] = true;
         		}else{
 				document.querySelector(`#horario input`).classList.add('formulario__grupo-incorrecto');
 				document.querySelector(`#horario input`).classList.add('form-control-error');
+				document.querySelector(`#horario input`).classList.add('form-control-FyH')
 				document.getElementById('iconHora').style.color = "#bb2929";
 				campos[`hora`] = false;
 				}
