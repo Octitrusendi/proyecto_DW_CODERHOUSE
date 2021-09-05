@@ -295,8 +295,7 @@ Contacto</h3>
 							<div class="contacto__iconos-boder">
 							<a href="https://www.instagram.com/laboratorio.mj/"target="_BLANK"> <i class="fab fa-instagram"></i></a>
 							</div>
-						   <div class="contacto__iconos-boder" data-aos="fade-up"
-						   data-aos-duration="1000">
+						   <div class="contacto__iconos-boder" >
 							<a href="https://api.whatsapp.com/send?phone=5493472583305"target="_BLANK"><i class="fab fa-whatsapp"></i></a>
 							</div>
 						</div>
@@ -338,7 +337,6 @@ Contacto</h3>
 			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
 		
-		
 		<script>
 		const formulario = document.getElementById('formResultados');
 		const inputs = document.querySelectorAll('#formResultados input');
@@ -375,8 +373,10 @@ Contacto</h3>
 					validarCampo(expresiones.telefono, e.target, 'tel');
 					if(expresiones.telefono.test(e.target.value)){
 						document.querySelector(`#grupo__tel input`).classList.remove('form-control-grande');
+						document.querySelector(`#grupo__tel .label__error-off`).classList.remove('label__error-activoTel');
 					}else{
 						document.querySelector(`#grupo__tel input`).classList.add('form-control-grande');
+						document.querySelector(`#grupo__tel .label__error-off`).classList.add('label__error-activoTel');
 					};
 				break;
 				case "email":

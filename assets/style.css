@@ -1724,6 +1724,9 @@ hr:not([size]) {
     color: #bb2929 !important;
     display: block !important;
 }
+.label__error-activoTel{
+    padding: .4rem 1rem !important;
+}
 .label__error-off {
     display: none;
  
