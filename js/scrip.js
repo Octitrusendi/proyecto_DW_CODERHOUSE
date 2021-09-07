@@ -4,11 +4,25 @@ window.onscroll = function(){
     scroll = document.documentElement.scrollTop;
 
     div = document.getElementById("nav");
+    nav_scroll = nav.children[2].children[1];
+    subNav_scroll = nav.children[2].children[1].children[2].children[1];
+    menuResponsive_scroll = nav.children[2].children[0];
 
     if (scroll > 20){
         div.classList.add('encabezado__style-scroll');
+        div.classList.add('encabezado__logo-scroll');
+        div.classList.add('titulo-scroll');
+        nav_scroll.classList.add('menu-scroll');
+        subNav_scroll.classList.add('submenu-scroll');
+        menuResponsive_scroll.classList.add('icono__menuresposive-scroll');
+        
     }else if (scroll < 20){
         div.classList.remove('encabezado__style-scroll');
+        div.classList.remove('encabezado__logo-scroll');
+        div.classList.remove('titulo-scroll');
+        nav_scroll.classList.remove('menu-scroll');
+        subNav_scroll.classList.remove('submenu-scroll');
+        menuResponsive_scroll.classList.remove('icono__menuresposive-scroll');
     }
     
     scroll = document.documentElement.scrollTop;

@@ -165,6 +165,10 @@ a:hover {
     transition: .3s;   
 }
 
+.titulo-scroll h1  {
+    font-size: 1.6em;
+}
+
 .encabezado__logo   {
     margin: auto;
     padding: 0.3125rem;
@@ -174,6 +178,14 @@ a:hover {
 .encabezado__logo img {
     width: 73px;
     height: 73px;
+    transition: .3s;   
+
+
+}
+
+.encabezado__logo-scroll img {
+    width: 60px;
+    height: 60px;
 
 }
 .caja_menu   {
@@ -194,6 +206,8 @@ a:hover {
     background-color:  var(--verde);
     position: absolute;
     cursor: pointer;
+    transition: all 0.6s var(--animation-curve);
+
   }
   .icono__menuresposive label::before, .icono__menuresposive label::after {
     content: "";
@@ -206,6 +220,13 @@ a:hover {
     transition: all 0.6s var(--animation-curve);
   
   }
+  .icono__menuresposive-scroll label {
+      transform: scale(.9) ;
+  }
+  .icono__menuresposive-scroll label::before, .icono__menuresposive-scroll label::after{
+    transform: scale(.9) ;
+
+}
   .icono__menuresposive label::before {
     top: -150%;
     left: 0%;
@@ -213,12 +234,14 @@ a:hover {
     transform-origin: left top;
    
   }
+ 
   .icono__menuresposive label::after {
     bottom: -150%;
     left: 0%;
     transform: rotateZ(0deg);
     transform-origin: left bottom;
   }
+
   
   #toggle:checked ~  label::before {
     content: "";
@@ -570,7 +593,7 @@ a:hover {
 }
 .contacto__iconos-boder i:hover {
     transform: scale(1.3);
-    filter: brightness(130%);   
+    filter: brightness(80%);   
 }
 /* Mapa */
 .contenedor__mapa {
@@ -1210,10 +1233,7 @@ hr:not([size]) {
 
 /* contacto */
 
-.detalle__tel  {
-    font-weight: 600;
-    color: var(--gris);
-}
+
 .detalle__ciudad    {
     color: var(--verde);
     font-weight: 600;
@@ -1227,8 +1247,14 @@ hr:not([size]) {
 .detalle_extracto--contacto   {
     text-align: center;
     padding: 1.25rem;
+  
+}
+.detalle__tel  {
+    font-weight: 600;
+    color: var(--gris);
     transition: all 0.3s;
 }
+
 .detalle_extracto--contacto hr{
     border: none;
     height: 1px ;
@@ -1237,9 +1263,7 @@ hr:not([size]) {
     opacity: .6;
 }
 
-.detalle_extracto--contacto:hover {    
-    transform: scale(1.1);
-}
+
 .caja__cardConocenos    {
     width: 300px;
     max-width: 350px;
@@ -1397,6 +1421,7 @@ hr:not([size]) {
         font-size: 1.8em;
 
     }
+   
 }
 
 @media (min-width: 500px)   {
@@ -1433,6 +1458,14 @@ hr:not([size]) {
     .item__flex-index   {
         width: 60%;
   
+    }
+    .titulo-scroll h1  {
+        font-size: 1.8em;
+    }
+    .encabezado__logo-scroll img {
+        width: 65px;
+        height: 65px;
+    
     }
 
 }
@@ -1471,6 +1504,14 @@ hr:not([size]) {
    
 
     }
+    .titulo-scroll h1  {
+        font-size: 1.8em;
+    }
+    .encabezado__logo-scroll img {
+        width: 65px;
+        height: 65px;
+    
+    }
     .menu > li    {
         margin: 0 5px;
         text-align: center;
@@ -1482,7 +1523,13 @@ hr:not([size]) {
         padding: 50px 0 50px 0;
         transition: .3s;
         position: relative;
+        transition: all .3s;
         
+    }
+    .menu-scroll > li{
+        padding: 33px 0 50px 0;
+        height: 80px;
+
     }
     .menu > li i  {
         margin-left: 5px;
@@ -1524,6 +1571,9 @@ hr:not([size]) {
         border-radius: 4px;
         box-shadow: 2px 2px 5px #999;
         position: relative;
+    }
+    .submenu-scroll {
+        margin-top: 38px;
     }
 
     .submenu::before  {
@@ -1769,3 +1819,4 @@ hr:not([size]) {
 .form-control::placeholder{
     color: var(--verde);
 }
+
