@@ -128,7 +128,7 @@ try {
 
     //Recipients
     $mail->setFrom('info@laboratorio.net.ar', 'Laboratorio');
-    $mail->addAddress('octaviotrusendi@gmail.com');     //Add a recipient
+    $mail->addAddress('mateotrusendi@gmail.com');     //Add a recipient
     $mail->addReplyTo('info@laboratorio.net.ar', 'Laboratorio');
 
     if (!empty($files))   {

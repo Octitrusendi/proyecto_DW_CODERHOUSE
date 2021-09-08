@@ -233,15 +233,15 @@ Contacto</h3>
 						<label class="label__correcto-activo"  for="floatingInput">e-mail *</label>
 						<label class="label__error-off" for="floatingInput">Ingrese un email correcto *</label>
 					  </div>
-					  <div class="seccion__form">
+<!-- 					  <div class="seccion__form">
 						<p>Si necesita enviarnos alguna documentación puede adjuntarla aquí. </p>
 					</div>
 					<div class="mb-3 col-md-12"">
 						<input type="file" class="form-control --pointer" aria-label="file example" name="userfile[]" multiple>
-					  </div>
+					  </div> -->
 
 					  <div class="form-floating mb-3 col-md-12">
-						<textarea class="form-control" placeholder="Escriba aqui su Consulta" name="consulta" form="formContacto" id="floatingTextarea2" required style="height: 100px"></textarea>
+						<textarea class="form-control" placeholder="Escriba aqui su Consulta" name="consulta" form="formContacto" id="floatingTextarea2" required style="min-height: 100px; max-height: 300px;"></textarea>
 						<label for="floatingTextarea2">Escriba aquí su consulta...</label>
 					  </div>
 					  <div class="barra animate__animated animate__fadeInDown">
@@ -444,11 +444,11 @@ Contacto</h3>
 
 				function subir_archivo(form){
 
-					let barra_estado = form.children[0].children[8].children[0],
+					let barra_estado = form.children[0].children[6].children[0],
 					span = barra_estado.children[0],
-					botom_cancelar = form.children[0].children[9].children[0];
-					botom_enviar = form.children[0].children[9].children[1];
-					progress = form.children[0].children[8];
+					botom_cancelar = form.children[0].children[7].children[0];
+					botom_enviar = form.children[0].children[7].children[1];
+					progress = form.children[0].children[6];
 					
 
 						//peticion

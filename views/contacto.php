@@ -5,22 +5,6 @@ use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php';
 
-function restructureArray(array $arr)   
-{
-    $result = array();
-    foreach ($arr as $key => $value)   {
-        for ($i = 0; $i < count($value); $i++) {
-            $result[$i][$key] = $value[$i];
-        }
-    }
-    return $result;
-}
-
-$files = [];
-    if (!empty($_FILES['userfile']))   {
-        $files =restructureArray($_FILES['userfile']);
-    }
-
 
 $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
@@ -100,17 +84,10 @@ try {
 
     //Recipients
     $mail->setFrom('info@laboratorio.net.ar', 'Laboratorio');
-    $mail->addAddress('octaviotrusendi@gmail.com');     //Add a recipient
+    $mail->addAddress('mateotrusendi@gmail.com');     //Add a recipient
     $mail->addReplyTo('info@laboratorio.net.ar', 'Laboratorio');
 
-    if (!empty($files))   {
-        foreach ($files as $key => $file )   {
-            $mail->addAttachment(
-                $file['tmp_name'],
-                $file['name']
-            );
-        }
-    }
+
 
     //Content
     $mail->isHTML(true);   
